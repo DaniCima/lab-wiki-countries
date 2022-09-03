@@ -11,7 +11,7 @@ function CountryDetails({ countryState }) {
     const findCountry = countryState.find(
       (country) => country.alpha3Code === countryId
     );
-    console.log(findCountry);
+    //console.log(findCountry);
     setTargetCountry(findCountry);
     setFoundedCountry(true);
   }, []);
@@ -47,7 +47,7 @@ function CountryDetails({ countryState }) {
                     {targetCountry.borders.map((code) => {
                       return (
                         <li key={code.alpha3Code}>
-                          <Link to={`/${code}`}>
+                          <Link to={`/${code.toLowerCase()}`}>
                             {countryState.map((country) => {
                               if (country.alpha3Code === code) {
                                 return country.name.common;
